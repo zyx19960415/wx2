@@ -1,0 +1,19 @@
+Global:
+  tool: build_submitter
+
+Default:
+  profile: [buildProduction]
+
+Profiles:
+
+  - profile:
+    name: buildProduction
+    env: wangpan-business
+    command: export NODE_ENV=production && sh ./build.sh
+    release: true
+
+  - profile:
+    name: buildDevelopment
+    env: wangpan-business
+    command: export NODE_ENV=development && sh ./build.sh
+    release: true
