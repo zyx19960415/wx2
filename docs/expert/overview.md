@@ -1,11 +1,35 @@
-## 背景
-现在前端对移动端和小程序的开发热情很高，各种多端解决方案百花齐放。例如很火的Taro和mpvue，还有后来居上的uni-app等等。
+## 实现思路
 
-因公司业务需要，本人最近也在忙活各种小程序，例如:之前开发的小程序的业务逻辑需要在其他平台复用，我们不可能把业务再重写一遍，所以需要研究下小程序之间的差异和转换，因此花了不少精力，有点心得体会，写点东西和大家交流交流。
+项目整体采用`context` + `processor（lifeCycles）` 的方式管理整个流程。
 
-这篇总结文章主要是对转换工具 [https://github.com/xujie-phper/wx2bd](https://github.com/xujie-phper/wx2bd) 的介绍，想进一步研究的同学可以带着问题看看代码，这样你就会更疑惑了~~
+![image](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1574391164.png)
 
-## 小程序的比较
+## 公共规则
+
+抽离公共规则，实现规则派生，使规则和流程隔离。
+
+## 上下文
+包装上下文，给每一个流程使用，且每一个流程只能和context交互。
+
+## 流程
+抽离流程，使流程专注于当前阶段需要做的事情，无需关心规则。
+
+## 生命周期
+
+| 生命周期      |     说明 |      |
+| :-------- | --------| :------ |
+| bootstrap    |   复制文件，根据文件后缀进行映射 |  field3  |
+| config    |   处理project.config.json文件 |  field3  |
+| View    |   转换视图文件 |  field3  |
+| css    |   转换css文件 |  field3  |
+| js    |   转换filter或sjs文件 |  field3  |
+| API    |   转换API |  field3  |
+
+>  举个例子，拿生产手机的流水线来说，所有手机的生产流程都是一致的，不管是生成 iphoneX（转微信小程序） 还是 华为P30（转百度小程序），只要给流水线提供零件（转换规则）并且遵循这套标准规则（转换流程）就可以得到想要的结果。
+>  如果后续需要生成 其他牌子的手机（转支付宝小程序或其他小程序），也是如此。 扩展性和标准性有很显著的提升。
+
+## 小程序差异比较
+
 |	类型 |微信小程序 |百度小程序 |支付宝小程序|
 |---|---|---|---|
 | api |wx.* |swan.* |my.*|
@@ -19,13 +43,13 @@
 | 生命周期和样式 |一致（理论） |一致（理论） |一致（理论）  | 
 
 ## 设计图
-![图片](https://user-gold-cdn.xitu.io/2019/9/5/16d004a59111f95d?w=2090&h=1304&f=png&s=224657)
+![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576036557.png)
 
 ## 流程图
-![图片](https://user-gold-cdn.xitu.io/2019/9/5/16d004a5917efd31?w=802&h=621&f=png&s=72643)
+![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576036555.png)
 
 ## 架构图
-![图片](https://user-gold-cdn.xitu.io/2019/9/5/16d004a59a3b34be?w=791&h=483&f=png&s=66939)
+![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576036556.png)
 
 
 ## 生成项目基本文件目录
@@ -44,23 +68,23 @@
 
 1. 打开在线AST工具，发现新大陆长这样
 
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d15fbe2fe54b23?w=1860&h=1168&f=png&s=362950)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045519.png)
 高亮的是对应的代码段，左边是一个对象的属性，右边对应ast中的节点信息。
 
 注意：js中不同的数据类型，对应的ast节点信息也不竟相同。以图中为例，externalClasses对象的节点信息中类型（type）是ObjectProperty，包含key ,value等关键属性（其他类型节点可能就没有）
 
 2. 打开transform开关，选择转换引擎，又发现了新大陆
 
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d1602401c83203?w=886&h=828&f=png&s=75813)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045521.png)
 
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d1603028124cea?w=592&h=544&f=png&s=40284)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045516.png)
 这里我们选择babel和配套的acorn，可以根据实际需要自己选择，这只是推荐。
 
 注意选择最新的babel7版本，不然下面例子中的类型会匹配不上，
 
 
 3. 现在的界面结构展示如下图，接下来就开始进行转换逻辑的代码编写
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d1606f4fff84a7?w=1688&h=1104&f=png&s=337517)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045517.png)
 
 
 **假设我们的目标是要把properties属性中key为‘current’的属性改为myCurrent。let's go!**
@@ -118,7 +142,7 @@ Component({
 
 首先在原始代码中选中'current'，查看右边ast的节点结构，如图：
 
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d160d37c39d32b?w=1588&h=1054&f=png&s=276117)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045519.png)
 这是一个对象属性（ObjectProperty），关键节点信息为key和value，key本身也是一个ast节点，类型为Identifier（准确的应该是StringIdentifer，常用的还有NumberIdentifer等）,'curent'是里面的name属性。所以我们的第一步就是找到改节点，然后修改它。
 
 **查找**
@@ -151,7 +175,7 @@ export default function (babel) {
 **修改**
 
 在`@babel/types`中找到该ObjectProperty的节点信息如下，我们需要需要构造一个新的同类型节点（ObjectProperty）来替换它。
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d16213932ff1db?w=1428&h=788&f=png&s=147730)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045742.png)
 可以看到关键信息是key和value，其他使用默认就好。value里面的信息我们可以照搬，从原有的path里面获取，我们更改的只是key里面的标识符'current'。因为key本身也是一个ast节点，所以我们还需要查看字典，看看生成Identifier节点需要什么参数，步骤一样。修改代码如下：
 ```
 ObjectProperty(path) {
@@ -168,7 +192,7 @@ ObjectProperty(path) {
 
 最后查看转换后的代码，发现'current'已经被我们替换成了'myCurrent'。
 
-![](https://user-gold-cdn.xitu.io/2019/9/9/16d162c3cb59d542?w=644&h=320&f=png&s=25321)
+![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045791.png)
 
 到这里，一个完整的例子就演示完了。这里补充说明一下，在实际中可能会遇到嵌套结构比较深的ast结构。我们需要嵌套类型判断，比如：
 ```
@@ -182,6 +206,7 @@ ObjectProperty(path) {
 因为遍历中的path指定的是当前匹配的节点信息。所以可以为不同的类型遍历指定不同的path参数，来获取当前遍历的节点信息，避免path覆盖，例如上面的path和memberPath。
 
 到这里，babel的基本用法就差不多介绍完了，想要熟练掌握，还需要你在项目中反复练习和实践。想系统学习babel，并在实际项目中使用的同学可以先看看这篇babel的[介绍文档](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md#toc-traversal)，边写边查，巩固学习
+
 
 ## 逻辑层转换
 借助babel的三剑客：`@babel/parser`、`@babel/traverse`、`@babel/generator`。
@@ -216,11 +241,13 @@ ObjectProperty(path) {
 3. 独有api无法自动匹配，存放到转换日志中，需手动删除或替换对应逻辑
 4. 关键词替换：wx ===>  swan
 
+
+
 ## 视图层转换
 > 视图层的转换也是使用的AST，借助`stricter-htmlparser2`将html转化为节点树，遍历，替换指定节点，最后生成新的html结构。
+
 ```
 <view wx:='aaa'>test</view>
-
 "parseHtml": {
         "type": "tag",
         "name": "view",
@@ -238,7 +265,7 @@ ObjectProperty(path) {
     }
 ```
 
-### 循环和条件判断
+## 循环和条件判断
 **微信**：
 ```
 //循环
@@ -343,7 +370,7 @@ ObjectProperty(path) {
 
 > 注：百度的filter中不支持导出变量，但是微信是支持的，所有这部分需要开发者手动处理下逻辑
 
-## 样式文件的转换
+## 样式文件转换
 > 小程序间的样式完全一样，只是文件后缀名不同，只需要替换引入的样式文件后缀wxss ===>  css
 
 例：
@@ -359,5 +386,4 @@ ObjectProperty(path) {
 > **注**：小程序独有能力和私有能力，无法转化（目前），需要手动进行逻辑替换或删除。转换中不涉及项目依赖文件的替换，例：`project.swan.json`和`pkginfo.json`，可以使用百度开发者工具自动生成
 
 ## 后记
-以上所讨论的都是最近写的一个[微信转百度小程序工具](https://github.com/xujie-phper/wx2bd)的详细介绍和具体实现，对小程序和babel感兴趣的可以去看看代码，应该会有所收获，并能发现其中还存在的一些问题，欢迎讨论，一起学习。
-
+以上所讨论的都是[微信转百度小程序工具](https://github.com/xujie-phper/wx2bd)的详细介绍和具体实现，对小程序和babel感兴趣的可以去看看代码，应该会有所收获，并能发现其中还存在的一些问题，欢迎讨论，一起学习。

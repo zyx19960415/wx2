@@ -1,4 +1,4 @@
-![logo](/config/logo.png)
+![logo](logo.png)
 
 # JOY
 
@@ -8,3 +8,4 @@
 * The Conversion Rate is as high as 100%
 
 [GitLab](http://gitlab.baidu.com/wangpanfe/joy-cli)
+[Started](start/context.md)

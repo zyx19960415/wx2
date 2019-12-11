@@ -18,13 +18,14 @@
         window.$docsify = {
             el: '#app',
             name: 'JOY',
-            repo: '',
+            repo: 'http://gitlab.baidu.com/wangpanfe/joy-cli',
             basePath: '/union-static/public/static/joy-org/docs/', // 基础路径
-            homepage: 'homepage.md', // 首页
-            coverpage: 'config/cover.md', // 封面
-            loadNavbar: 'config/nav.md', // 导航栏
-            loadSidebar: 'config/summary.md', // 侧边栏
-            noEmoji: false, // 开启emoji解析
+            homepage: '/start/context.md', // 首页
+            coverpage: 'cover.md', // 封面
+            loadNavbar: 'nav.md', // 导航栏
+            loadSidebar: true,
+            loadSidebar: 'sidebar.md',
+            noEmoji: false, // 关闭emoji解析
             notFoundPage: '', // 404页面
             search: {
                 maxAge: 86400000, // 过期时间，单位毫秒，默认一天
