@@ -1,5 +1,5 @@
 <div style="position: relative;width:700px;height: 400px;">
-    <img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" src="/docs/logo.png"/>
+    <img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" src="/union-static/public/static/joy-org/docs/logo.png"/>
     <p style="position:absolute;width: 100%;bottom:0;text-align:center;">JOY：高效、可靠的小程序互转工具</p>
 </div>
 
