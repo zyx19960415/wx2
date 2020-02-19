@@ -7,5 +7,5 @@
 * More Faster And Stable
 * The Conversion Rate is as high as 95%
 
-[GitLab](http://gitlab.baidu.com/wangpanfe/joy-cli)
+[iCode](http://icode.baidu.com/repos/baidu/bp/joy-cli)
 [Started](start/context.md)
