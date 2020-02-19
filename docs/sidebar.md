@@ -16,3 +16,7 @@
     * [其它](/start/overview?id=其它)
 
 * [更新记录](/start/changelog.md)
+
+* [吐了个槽](https://support.qq.com/products/123203)
+
+* [FAQ](/start/fqa.md)

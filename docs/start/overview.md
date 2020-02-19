@@ -9,9 +9,11 @@
 抽离公共规则，实现规则派生，使规则和流程隔离。
 
 ## 上下文
+
 包装上下文，给每一个流程使用，且每一个流程只能和context交互。
 
 ## 流程
+
 抽离流程，使流程专注于当前阶段需要做的事情，无需关心规则。
 
 ## 生命周期
@@ -43,25 +45,22 @@
 | 生命周期和样式 |一致（理论） |一致（理论） |一致（理论）  | 
 
 ## 设计图
-![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576036557.png)
 
-## 流程图
-![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576036555.png)
-
-## 架构图
-![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576036556.png)
-
+![图片](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1582086033.png)
 
 ## 生成项目基本文件目录
+
 > 使用`recursive-copy`库，完成文件的整体拷贝，替换文件名后缀，例：.wxml===> .swan
 
 ## 转换json文件，去掉组件驼峰
+
 > 1、找到josn文件里“usingComponents“包含的值，将组件引用中的驼峰改为kebabCase
 > 2、若包含抽象节点“componentGenerics“字段，手百中不支持，存放在错误日志中
 
 ⚠️将修改后的组件名的映射关系记录在全局的contextStore中，属性值为“renamedComponents“，视图层中转换中需要使用新的组件名
 
 ## AST实战讲解
+
 > 以下的转换逻辑会大量依赖babel,进行AST的代码转换，所以我们先巩固下**抽象语法树**相关的知识。
 
 可能刚接触AST的人会感觉无从下手，毕竟ast相关的知识点确实比较繁杂，而且相关的入门指导比较少。这里我们以一个完整的例子，过一下AST常用基本语法，方便大家入门，虽说是入门，但如果熟练掌握，已经可以应用于实际开发了。
@@ -78,14 +77,13 @@
 ![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045521.png)
 
 ![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045516.png)
+
 这里我们选择babel和配套的acorn，可以根据实际需要自己选择，这只是推荐。
 
 注意选择最新的babel7版本，不然下面例子中的类型会匹配不上，
 
-
 3. 现在的界面结构展示如下图，接下来就开始进行转换逻辑的代码编写
 ![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045517.png)
-
 
 **假设我们的目标是要把properties属性中key为‘current’的属性改为myCurrent。let's go!**
 
@@ -168,6 +166,7 @@ export default function (babel) {
 }
 
 ```
+
 这里需要用到`@babel/types`[https://babeljs.io/docs/en/babel-types](https://babeljs.io/docs/en/babel-types)来辅助我们进行类型判断,开发中会非常依赖这个字典进行查找
 
 在控制台会看见，path下面的节点信息很多，关键字段为node和parentPath，node记录了该节点下数据信息，例如之前提到过的key和value。parentPath代表父级节点，此例中表示ObjectExpression中properties节点信息，有时我们需要修改父节点的数据，例如常见的节点移除操作。接下来我们修改该节点信息。
@@ -195,6 +194,7 @@ ObjectProperty(path) {
 ![](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576045791.png)
 
 到这里，一个完整的例子就演示完了。这里补充说明一下，在实际中可能会遇到嵌套结构比较深的ast结构。我们需要嵌套类型判断，比如：
+
 ```
 ObjectProperty(path) {
      console.log(path,'ObjectProperty--')
@@ -203,13 +203,15 @@ ObjectProperty(path) {
       }
  }
 ```
+
 因为遍历中的path指定的是当前匹配的节点信息。所以可以为不同的类型遍历指定不同的path参数，来获取当前遍历的节点信息，避免path覆盖，例如上面的path和memberPath。
 
 到这里，babel的基本用法就差不多介绍完了，想要熟练掌握，还需要你在项目中反复练习和实践。想系统学习babel，并在实际项目中使用的同学可以先看看这篇babel的[介绍文档](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md#toc-traversal)，边写边查，巩固学习
 
-
 ## 逻辑层转换
+
 借助babel的三剑客：`@babel/parser`、`@babel/traverse`、`@babel/generator`。
+
 >  js的转换规则较复杂，会大量依赖`babel/types`做类型判断，并借助[在线AST工具](https://astexplorer.net/)辅助测试。
 
 	          +--------+                     +----------+
@@ -222,14 +224,18 @@ ObjectProperty(path) {
 	                       +--------------+
 	                       
 
- 1. 名称不同，功能相同的api，需要做映射，例：
-	`navigateToMiniProgram` ===>  `navigateToSmartProgram`
- 2. 自定义组件的处理：
-	百度小程序构造器不支持的属性： moved，relations， observers
-	内置behaviors的处理：
-	 
-		`wx://form-field` ===>  `swan://form-field`
-		`wx://component-export` ===>  `swan://component-export`
+1. 名称不同，功能相同的api，需要做映射，例：
+
+`navigateToMiniProgram` ===>  `navigateToSmartProgram`
+
+2. 自定义组件的处理：
+
+百度小程序构造器不支持的属性： moved，relations， observers
+
+内置behaviors的处理：
+
+    `wx://form-field` ===>  `swan://form-field`
+    `wx://component-export` ===>  `swan://component-export`
 
     `relations`中若有使用link回调函数，则对应到百度的attached生命周期中执行，
     配套使用的`getRelationNodes`，则对应百度的selectComponent方法。
@@ -239,11 +245,11 @@ ObjectProperty(path) {
     所有的父子组件的依赖关系存在在全局的contextStore中,供视图层添加swanId时使用
 
 3. 独有api无法自动匹配，存放到转换日志中，需手动删除或替换对应逻辑
+
 4. 关键词替换：wx ===>  swan
 
-
-
 ## 视图层转换
+
 > 视图层的转换也是使用的AST，借助`stricter-htmlparser2`将html转化为节点树，遍历，替换指定节点，最后生成新的html结构。
 
 ```
@@ -266,6 +272,7 @@ ObjectProperty(path) {
 ```
 
 ## 循环和条件判断
+
 **微信**：
 ```
 //循环
@@ -290,12 +297,15 @@ ObjectProperty(path) {
 <view s-elif="isWifi">Wifi</view>
 <view s-else>Other</view>
 ```
+
 转换逻辑为：
+
 > 1. 将wx:替换为s-，例：wx:if  =====>  s-if
 > 2. 去掉插值语法(花括号)
 > 3. wx:for， wx:for-index，wx:for-item合并为s-for="p,index in persons"
 
 ### 模版的转换
+
 ```
 <template name="msgItem">
   <view>
@@ -309,15 +319,20 @@ ObjectProperty(path) {
 //**百度**：
 <template is="msg-item" data="{{ {...item} }}" />
 ```
+
 转换逻辑为：
+
 > 1. data属性外增加一个大括号
 > 2. 名称改为小写字母与中划线“-”的组合
 
 ### `for`和`if`作用于同一标签
+
 微信可以使用，手百禁止， 编译会报错
+
 > 注意: `s-if` 与 `s-for` 不可在同一标签下同时使用。
 
 将微信中的`if`标签，借助虚拟组件block，分成父子组件。
+
 例：
 
      <view wx:for="{{list}}" wx:if="{{item}}">test</view>
@@ -328,6 +343,7 @@ ObjectProperty(path) {
      </view>
 
 ### 双向绑定
+
 ```
 //**微信**：
 <scroll-view scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
@@ -339,11 +355,15 @@ ObjectProperty(path) {
     <view id="green" class="scroll-view-item bc_green"></view>
 </scroll-view>
 ```
+
 转换逻辑为：
+
 >将插值语法变换为{= * =}
 
 ### wxs语法
-> 微信使用wxs来进行数据处理，定义共用函数段；对应的百度的filter语法
+
+> 微信使用 wxs 来进行数据处理，定义共用函数段；对应的百度的 filter 语法
+
 ```
 //**微信**：
 <wxs module="test">
@@ -366,24 +386,29 @@ ObjectProperty(path) {
 </filter>
 ```
 转换逻辑为：
-> 将module.exports替换为export default
 
-> 注：百度的filter中不支持导出变量，但是微信是支持的，所有这部分需要开发者手动处理下逻辑
+> 将 module.exports 替换为 export default
+
+> 注：百度的 filter 中不支持导出变量，但是微信是支持的，所有这部分需要开发者手动处理下逻辑
 
 ## 样式文件转换
-> 小程序间的样式完全一样，只是文件后缀名不同，只需要替换引入的样式文件后缀wxss ===>  css
+
+> 小程序间的样式完全一样，只是文件后缀名不同，只需要替换引入的样式文件后缀 wxss ===>  css
 
 例：
 
-    @import "header.wxss";
- 转化为：
+  @import "header.wxss";
 
-    @import "header.css";
+  转化为：
+
+  @import "header.css";
     
 ## 转换日志
-转换日志分为'info'、'warning'、'error'三种类型，转换过程中产生的日志信息都存放在统一logStore中，结束时会借助`mkdirp`和`fs` 能力把logStore存储的所有信息，写入到日志文件中。
 
-> **注**：小程序独有能力和私有能力，无法转化（目前），需要手动进行逻辑替换或删除。转换中不涉及项目依赖文件的替换，例：`project.swan.json`和`pkginfo.json`，可以使用百度开发者工具自动生成
+小程序互转工具-Joy，在实现各寄主小程序互相转换的同时，生成转换日志，提供使用工具者参考，让更改点与错误点暴露在使用者面前。因JSON格式的日志冗杂，不易使用者观看，所以开发日志可视化设计，将其划分为为5个级别：Fatal、Warning、Notice、Trace、Debug，增加日志的可读性，提升用户体验。
+
+> **注**：小程序独有能力和私有能力，部分无法100%进行转化，进行了一定降级处理。
 
 ## 其它
-以上所讨论的都是[微信转百度小程序工具](https://github.com/xujie-phper/wx2bd)的详细介绍和具体实现，对小程序和babel感兴趣的可以去看看代码，应该会有所收获，并能发现其中还存在的一些问题，欢迎讨论，一起学习。
+
+对小程序和babel感兴趣的可以去看看代码，应该会有所收获，并能发现其中还存在的一些问题，欢迎讨论学习，并为JOY贡献出自己的力量。

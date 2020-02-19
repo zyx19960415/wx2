@@ -1,5 +1,21 @@
 #### 安装使用
 
+### 使用可视化工具
+
+可视化工具目前已支持Mac操作系统
+
+点击下载后，安装使用
+
+下载地址：https://pan.baidu.com/s/1vCKMSonMN6DmnNNJSmqIIQ
+
+提取密码:vdjh
+
+JOY-CLI可视化界面如下：
+
+![JOY-CLI可视化界面](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1582081214.png)
+
+### 使用源代码
+
 首先，我们需要通过`Git`下载 `JOY` 的代码仓库
 
 ```
