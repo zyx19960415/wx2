@@ -1,6 +1,6 @@
 #### 参与贡献
 
-1. 推荐先学习，[AST实战介绍]()，掌握babel基础知识
+1. 推荐先学习，[AST实战介绍](https://juejin.im/post/5d0b3218e51d45599e019dd7#heading-22)，掌握babel基础知识
 
 2. 熟悉小程序之间差异[小程序互转文档](https://juejin.im/post/5d70b6e0518825103e545a21)，明确转换思路
 

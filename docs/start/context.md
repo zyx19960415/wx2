@@ -7,7 +7,7 @@
 
 <div style="width:770px;margin-bottom: 40px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">
     <h4>介绍</h4>
-    <p>JOY 基于已有的原生小程序项目，利用 Bable 提供的 AST 等能力，对小程序间差异进行抹平，提供简单快捷的 API，助力开发者快速互转已有小程序项目。</p>
+    <p>JOY 基于已有的原生小程序项目，利用 Babel 提供的 AST 等能力，对小程序间差异进行抹平，提供简单快捷的 API，助力开发者快速互转已有小程序项目。</p>
 </div>
 
 <div style="width:770px;margin-bottom: 24px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">

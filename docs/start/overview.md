@@ -2,7 +2,7 @@
 
 项目整体采用`context` + `processor（lifeCycles）` 的方式管理整个流程。
 
-![image](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1574391164.png)
+![image](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1583216593.png)
 
 ## 公共规则
 
@@ -405,7 +405,7 @@ ObjectProperty(path) {
     
 ## 转换日志
 
-小程序互转工具-Joy，在实现各寄主小程序互相转换的同时，生成转换日志，提供使用工具者参考，让更改点与错误点暴露在使用者面前。因JSON格式的日志冗杂，不易使用者观看，所以开发日志可视化设计，将其划分为为5个级别：Fatal、Warning、Notice、Trace、Debug，增加日志的可读性，提升用户体验。
+小程序互转工具-Joy，在实现各原生小程序互相转换的同时，生成转换日志，提供使用工具者参考，让更改点与错误点暴露在使用者面前。因JSON格式的日志冗杂，不易使用者观看，所以开发日志可视化设计，将其划分为为5个级别：Fatal、Warning、Notice、Trace、Debug，增加日志的可读性，提升用户体验。
 
 > **注**：小程序独有能力和私有能力，部分无法100%进行转化，进行了一定降级处理。
 
