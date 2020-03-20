@@ -1,6 +1,6 @@
 ![logo](logo.png)
 
-# JOY
+# wx2any
 
 > A magical small program mutual transfer tools
 

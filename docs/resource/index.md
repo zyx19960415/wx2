@@ -29,7 +29,7 @@ N年后你想改变世界。
 
 欢迎扫描如下二维码，加入我们的微信沟通群，不定时回复各位提出的各种问题，欢迎来访~
 
-<img src="https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576044284.png" width="300" height="300" alt="JOY技术沟通交流群" align=center>
+<img src="https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576044284.png" width="300" height="300" alt="wx2any技术沟通交流群" align=center>
 
 ### 持续招聘
 

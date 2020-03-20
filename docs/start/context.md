@@ -1,13 +1,13 @@
 <div style="position: relative;width:700px;height: 400px;">
     <img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" src="/union-static/public/static/joy-org/docs/logo.png"/>
-    <p style="position:absolute;width: 100%;bottom:0;text-align:center;">JOY：高效、可靠的小程序互转工具</p>
+    <p style="position:absolute;width: 100%;bottom:0;text-align:center;">wx2any：高效、可靠的小程序互转工具</p>
 </div>
 
 ---
 
 <div style="width:770px;margin-bottom: 40px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">
     <h4>介绍</h4>
-    <p>JOY 基于已有的原生小程序项目，利用 Babel 提供的 AST 等能力，对小程序间差异进行抹平，提供简单快捷的 API，助力开发者快速互转已有小程序项目。</p>
+    <p>wx2any 基于已有的原生小程序项目，利用 Babel 提供的 AST 等能力，对小程序间差异进行抹平，提供简单快捷的 API，助力开发者快速互转已有小程序项目。</p>
 </div>
 
 <div style="width:770px;margin-bottom: 24px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">

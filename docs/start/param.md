@@ -1,55 +1,55 @@
 ### 转换项目
 
-使用全局命令`joy`，指定需要被互转的`项目路径`，以及转换完成后的`输出路径`
+使用全局命令`wx2any`，指定需要被互转的`项目路径`，以及转换完成后的`输出路径`
 
 ```
-joy <entry-directory> <output-directory>
+wx2any <entry-directory> <output-directory>
 ```
 
 ### 版本信息
 
-使用全局命令`joy`，加上参数`-V`，或者`--version`进行查看joy的`版本信息`
+使用全局命令`wx2any`，加上参数`-V`，或者`--version`进行查看wx2any的`版本信息`
 
 ```
-joy -V
+wx2any -V
 ```
 
 ```
-joy --version
+wx2any --version
 ```
 
 ### 清除缓存
 
-使用全局命令`joy`，加上参数`-c`，或者`--clean`清除joy的全局`缓存`
+使用全局命令`wx2any`，加上参数`-c`，或者`--clean`清除wx2any的全局`缓存`
 
 ```
-joy -c
+wx2any -c
 ```
 
 ```
-joy --clean
+wx2any --clean
 ```
 
 ### 转换类型
 
-使用全局命令`joy`，加上参数`-t`，或者`--target`确定转换的`小程序类型`
+使用全局命令`wx2any`，加上参数`-t`，或者`--target`确定转换的`小程序类型`
 
 ```
-joy -t
+wx2any -t
 ```
 
 ```
-joy --target
+wx2any --target
 ```
 
 ### 更多帮助
 
-使用全局命令`joy`，加上参数`-h`，或者`--help`来获取更多关于命令的`使用帮助`
+使用全局命令`wx2any`，加上参数`-h`，或者`--help`来获取更多关于命令的`使用帮助`
 
 ```
-joy -h
+wx2any -h
 ```
 
 ```
-joy --help
+wx2any --help
 ```
