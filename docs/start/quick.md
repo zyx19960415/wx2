@@ -1,30 +1,47 @@
 #### 安装使用
 
-### 使用源代码
+### 准备工作
+* node安装（要求Node >=8 && NPM >= 3）
+* 全局安装：npm install @baidu/wx2any -g
 
-首先，我们需要通过`Git`下载 `wx2any` 的代码仓库
 
+### 使用
+切换到自己指定的工作目录，执行全局命令`wx2any`，并指定转换`目录路径`，和输出`目录路径`
+
+```bash
+// 当前只支持百度小程序，其他小程序后续支持
+$ wx2any <微信小程序文件夹> <目标小程序文件夹>
 ```
-git clone ssh://icode.baidu.com:8235/baidu/bp/joy-cli
+> 注： 路径中请包含'/'作为路径标识
+
+### 指定目标小程序
+使用命令行参数`--target`，简写`-t`
+```bash
+# 默认，百度小程序
+$ wx2any <微信小程序文件夹> <目标小程序文件夹> --target=wx2swan
+
+# 当前版本暂不支持，qq小程序
+$ wx2any <微信小程序文件夹> <目标小程序文件夹> --target=wx2qq
 ```
 
-然后，进入项目目录，安装依赖
-
+### 配置
+如果你的项目中有专属的自定义函数回调名，接口名，逻辑降级处理等，请在微信项目根目录下放置`.wx2anyrc.js`文件，并填写如下：
+```javascript
+/**
+ * @file .wx2anyrc.js
+ */
+module.exports = {
+    // 内部项目（internal;外部项目（external）
+    projectType: 'external',
+    // 微信登录pass的跳转页面函数，推荐默认为bdWxLogin，可配置其他值
+    bdWxLogin: 'bdWxLogin',
+    // 微信open-type的回调函数,默认推荐为getuserinfo，可配置其他值
+    getuserinfo:'getUserInfoHandle',
+    // ...其他自定义转换规则
+};
 ```
-cd joy-cli && npm install
-```
+> 注：目前工具只支持识别展示的三项配置，非常希望您把需要新增的自定义配置告诉我们，增加我们的处理能力
 
-项目安装完成以后，我们需要将wx2any命令设为全局，如下：
-
-```
-npm link
-``` 
-
-此时，我们就设置好了全局软链，接下来，我们通过`wx2any`进行转换一个微信小程序Demo
-
-```
-wx2any miniprogram-demo ./miniprogram-demo-swan
-```
 
 微信小程序Demo代码库地址：https://github.com/wechat-miniprogram/miniprogram-demo
 

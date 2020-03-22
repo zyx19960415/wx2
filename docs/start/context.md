@@ -7,7 +7,7 @@
 
 <div style="width:770px;margin-bottom: 40px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">
     <h4>介绍</h4>
-    <p>wx2any 基于已有的原生小程序项目，利用 Babel 提供的 AST 等能力，对小程序间差异进行抹平，提供简单快捷的 API，助力开发者快速互转已有小程序项目。</p>
+    <p>wx2any工具通过babel,htmlparse,postcss等提供的代码解析和转译能力，可以将原生微信小程序转化为其他宿主小程序，无代码侵入，编译产出可读可写，支持用户二次开发</p>
 </div>
 
 <div style="width:770px;margin-bottom: 24px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">
