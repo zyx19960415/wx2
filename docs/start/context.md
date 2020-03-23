@@ -8,6 +8,7 @@
 <div style="width:770px;margin-bottom: 40px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">
     <h4>介绍</h4>
     <p>wx2any工具通过babel,htmlparse,postcss等提供的代码解析和转译能力，可以将原生微信小程序转化为其他宿主小程序，无代码侵入，编译产出可读可写，支持用户二次开发</p>
+    <p>微信小程序的一些系统独有的api能力无法等价转换，wx2any进行了公共降级提示，用户也可以在转换后手动进行逻辑处理</p>
 </div>
 
 <div style="width:770px;margin-bottom: 24px;padding: 24px;background-color: #fff;border-radius: 6px;box-shadow: 0 8px 12px #ebedf0;">

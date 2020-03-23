@@ -84,6 +84,7 @@ b = 5;   //AssignmentExpression
 ```
 #### 访问者（visitor）
 > 访问者是一个用于 AST 遍历的跨语言的模式。 简单的说它们就是一个对象，定义了用于在一个树状结构中获取具体节点的方法
+
 ```
 const MyVisitor = {
   //完整写法
