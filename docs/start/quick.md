@@ -57,10 +57,10 @@ module.exports = {
 
 点击下载后，安装使用
 
-下载地址：https://pan.baidu.com/s/1vCKMSonMN6DmnNNJSmqIIQ
+下载地址：https://pan.baidu.com/s/1SOp9I4uuM0vSWrK5KJoWJA
 
-提取密码:vdjh
+提取密码：mw83
 
 wx2any可视化界面如下：
 
-![wx2any可视化界面](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1582081214.png)
+![wx2any可视化界面](https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1584934630.jpg)
