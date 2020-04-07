@@ -347,7 +347,7 @@ import table from 'union-design/src/components/table/index.js';
 ## 总结
 
 
-在wx2any中大量依赖babel提供的转译能力，对小程序间的语法差异进行转换和抹平。比如：
+在wx2中大量依赖babel提供的转译能力，对小程序间的语法差异进行转换和抹平。比如：
 
 1. 自定义组件中的`relations`的差异
 

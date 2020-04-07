@@ -27,9 +27,9 @@ N年后你想改变世界。
 
 ### 技术交流
 
-欢迎扫描如下二维码，加入我们的微信沟通群，不定时回复各位提出的各种问题，欢迎来访~
+加入我们的百度Hi用户群，回复各位提出的各种问题，欢迎来访~
 
-<img src="https://issuecdn.baidupcs.com/issue/netdisk/ts_ad/help/1576044284.png" width="300" height="300" alt="wx2any技术沟通交流群" align=center>
+Hi群号：2877884
 
 ### 持续招聘
 
