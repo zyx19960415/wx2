@@ -2,7 +2,7 @@
 
 set -e
 
-DIR_NAME="wx2"
+DIR_NAME=`basename \`pwd\``
 PACKAGE_NAME="$DIR_NAME.tar.gz"
 STATIC_FILES="output/public/static/$DIR_NAME";
 view_FILES="output/view/$DIR_NAME";
