@@ -11,6 +11,9 @@
     * [AST实战教程](/contents/AST.md)
     * [贡献代码](/contents/contribution.md)
 
+* API差异处理
+    * [微信转智能小程序](/api/wx2swan.md)
+
 * [更新记录](/start/changelog.md)
 
 * [吐了个槽](https://support.qq.com/products/123203)

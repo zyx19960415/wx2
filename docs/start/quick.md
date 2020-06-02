@@ -45,8 +45,8 @@ module.exports = {
 
 微信小程序Demo代码库地址：https://github.com/wechat-miniprogram/miniprogram-demo
 
-<video controls="controls" preload="auto" poster="/union-static/public/static/wx2/img/loading.png" width="600" height="335">
-    <source src="/union-static/public/static/wx2/video/trans_demo.mp4" type="video/mp4">
+<video controls="controls" preload="auto" poster="https://staticiot.cdn.bcebos.com/wx2-org/img/loading.png" width="600" height="335">
+    <source src="https://staticiot.cdn.bcebos.com/wx2-org/video/trans_demo.mp4" type="video/mp4">
 </video>
 
 ?> Surprise~ 项目已经转化完成了，赶快运行试试吧
