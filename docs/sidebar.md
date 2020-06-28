@@ -18,6 +18,8 @@
 
 * 云开发
     * [云存储转换的解决方案](/cloud/cloudSave.md)
+    * [云数据库转换的解决方案](/cloud/cloudData.md)
+    * [云函数转换的解决方案](/cloud/cloudFunction.md)
 
 * [更新记录](/start/changelog.md)
 
