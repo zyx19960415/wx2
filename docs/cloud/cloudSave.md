@@ -48,6 +48,7 @@
 * config：全局配置
 
 特殊参数：
+
 | API | 微信小程序 | 智能小程序 |
 | ---- | ---- | ---- |
 | uploadFile|cloudPath、filePath| cloudPath、filePath|

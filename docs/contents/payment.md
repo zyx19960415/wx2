@@ -22,6 +22,7 @@
 在微信小程序中是通过调用wx.requestPayment(OBJECT)发起微信支付。
 
 OBJECT参数说明
+
 | 参数 | 类型 | 必填 | 说明 |
 | :----: |:----:| :----: | :----: |
 | timeStamp | String | 是 | 当前时间戳 |
@@ -36,6 +37,7 @@ OBJECT参数说明
 (PS:请求字段中的paySign是通过MD5去加密拼接后appId、timeStamp、nonceStr、package、signType字段)
 
 回调结果说明
+
 | 回调类型 | errMsg	| 说明 |
 | :----: | :----: | :----: |
 | success |	requestPayment:ok |	调用支付成功
@@ -68,6 +70,7 @@ wx.requestPayment({
 在智能小程序中使用swan.requestPolymerPayment(OBJECT)方法调用支付接口，该方法在基础库 1.8.5 版本开始支持。使用工具调试时为模拟支付，使用真机调试时可查看真实支付结果。
 
 OBJECT参数说明
+
 | 属性名 |	类型 |	必填 | 说明 |
 | :----: | :----: | :----: |  :----:|
 | orderInfo | Object |	是	| 订单信息 |
@@ -76,6 +79,7 @@ OBJECT参数说明
 |complete|	Function|	否	|	接口调用结束的回调函数（调用成功、失败都会执行）
 
 orderInfo 参数说明
+
 | 参数 | 必填|说明
 | :----: | :----: |  :----:|
 |dealId	|是|	跳转百度收银台支付必带参数之一，是百度收银台的财务结算凭证，与账号绑定的结算协议一一对应，每笔交易将结算到 dealId 对应的协议主体。详见核心参数获取与组装。|
