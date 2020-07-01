@@ -20,6 +20,7 @@
         let devPath = '/docs/';
         // eslint-disable-next-line
         let basePath = location.host.match('localhost') ? devPath : prodPath;
+
         /* eslint-disable */
         window.$docsify = {
             el: '#app',
@@ -47,6 +48,7 @@
     <script src="https://staticiot.cdn.bcebos.com/wx2-org/js/search.js"></script>
     <script src="https://staticiot.cdn.bcebos.com/wx2-org/js/emoji.js"></script>
     <script src="https://staticiot.cdn.bcebos.com/wx2-org/js/copy-code.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script> 
 </body>
 
 </html>
