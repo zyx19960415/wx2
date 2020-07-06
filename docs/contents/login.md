@@ -86,13 +86,13 @@ getPhoneNumber(res) {
 
 | 微信小程序 | 智能小程序 |
 | ---- | ---- |
-| 调用`login`对用户无感知，使用`getPhoneNumber`时候弹出半屏授权框<br>![图片](../../static/img/login-wx.png) | 调用`login`时，若百度APP未登录，会先跳转至百度APP登录授权页，再使用`getPhoneNumber`时候弹出半屏授权框<br>![图片](../../static/img/login-bd.jpg)|
+| 调用`login`对用户无感知，使用`getPhoneNumber`时候弹出半屏授权框<br>![图片](https://staticsns.cdn.bcebos.com/amis/2020-7/1594036518613/login-wx.png) | 调用`login`时，若百度APP未登录，会先跳转至百度APP登录授权页，再使用`getPhoneNumber`时候弹出半屏授权框<br>![图片](https://staticsns.cdn.bcebos.com/amis/2020-7/1594036470109/login-bd.jpg)|
 
 ##### 2.2 场景二：先使用 `getPhoneNumber` 后再调用 `login`
 
 | 微信小程序 | 智能小程序 |
 | ---- | ---- |
-| 使用`getPhoneNumber`时候弹出半屏授权框，调用`login`对用户无感知 <br>![图片](../../static/img/login-wx-phone.png)| 使用`getPhoneNumber`时候弹出半屏弹框(包括登录和获取手机号授权)，调用`login`对用户无感知<br>![图片](../../static/img/login-bd-phone.png)|
+| 使用`getPhoneNumber`时候弹出半屏授权框，调用`login`对用户无感知 <br>![图片](https://staticsns.cdn.bcebos.com/amis/2020-7/1594036500314/login-wx-phone.png)| 使用`getPhoneNumber`时候弹出半屏弹框(包括登录和获取手机号授权)，调用`login`对用户无感知<br>![图片](https://staticsns.cdn.bcebos.com/amis/2020-7/1594036404461/login-bd-phone.png)|
 
 ##### 2.3 结论
 **推荐开发者将`login`放置在`getPhoneNumber`之后使用**

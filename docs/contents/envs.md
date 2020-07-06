@@ -31,21 +31,21 @@ wx2 <兼容后的小程序文件夹> <目标小程序文件夹> --target=swan
 如
 ```js
 {
-  "pages": [
+    "pages": [
         "index/index"
-   ],
+    ],
   // 提供 _swanEnv，在百度小程序中跟外部的配置做替换，在微信小程序中删除
-  "_swanEnv": {
-	  "window": {
-		  "navigationBarTitleText": "百度Demo"
-	   }
-  },
+    "_swanEnv": {
+        "window": {
+            "navigationBarTitleText": "百度Demo"
+        }
+    },
   // 提供 _wxEnv，在微信小程序中跟外部的配置做替换，在百度小程序中删除
-  "_wxEnv": {
-	"window": {
-		  "navigationBarTitleText": "微信Demo"
-	 }
-  }
+    "_wxEnv": {
+        "window": {
+            "navigationBarTitleText": "微信Demo"
+        }
+    }
 }
 ```
 
@@ -53,12 +53,12 @@ wx2 <兼容后的小程序文件夹> <目标小程序文件夹> --target=swan
 
 ```js
 {
-  "pages": [
+    "pages": [
         "index/index"
-   ],
-   "window": {
-		"navigationBarTitleText": "百度Demo"
-   }
+    ],
+    "window": {
+       "navigationBarTitleText": "百度Demo"
+    }
 }
 ```
 
@@ -79,10 +79,10 @@ else {
 
 ```js
 if ('swan' === 'swan') {
-	// 在百度平台内 do something
+    // 在百度平台内 do something
 }
 else {
-	// 在其他平台 do something
+    // 在其他平台 do something
 }
 ```
 
@@ -90,16 +90,16 @@ else {
 
 提供`${appType}-env`标签，标识在不同平台上的运行代码，该标签只是一个占位符，不支持相互嵌套，用来包裹正式的模板代码，在特定平台加载特定代码，如
 
-```html
+```wxml
 <view>
     <wx-env>
         <view class="wx-tip">
-	        欢迎使用微信小程序
+            欢迎使用微信小程序
         </view>
     </wx-env>
     <swan-env>
         <view class="swan-tip">
-	        欢迎使用百度小程序
+            欢迎使用百度小程序
         </view>
     </swan-env>
 </view>
@@ -107,10 +107,10 @@ else {
 
 处理后的百度小程序代码
 
-```html
+```swan
 <view>
-     <view class="swan-tip">
-	     欢迎使用百度小程序
-     </view>
+    <view class="swan-tip">
+        欢迎使用百度小程序
+    </view>
 </view>
 ```
