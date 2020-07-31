@@ -1,1 +1,1 @@
-wx2还在内测阶段，近期将会开源，敬请期待～～～
+代码地址： http://icode.baidu.com/repos/baidu/bp/joy-cli/
