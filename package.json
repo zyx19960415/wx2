@@ -7,10 +7,13 @@
         "docs": "docs"
     },
     "scripts": {
-        "start": "docsify serve"
+        "start": "docsify serve",
+        "release": "dc"
     },
     "license": "ISC",
     "devDependencies": {
-        "docsify-cli": "^4.4.0"
+        "docsify-cli": "^4.4.0",
+        "fs-extra": "^7.0.0",
+        "egg-deploy-client": "http://gitlab.baidu.com/wangpanfe/egg-deploy-client/repository/archive.tar.gz?ref=1.2.0"
     }
 }
