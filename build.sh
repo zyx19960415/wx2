@@ -4,7 +4,7 @@ set -e
 
 DIR_NAME=`basename \`pwd\``
 PACKAGE_NAME="$DIR_NAME.tar.gz"
-STATIC_FILES="output/public/static/$DIR_NAME";
+STATIC_FILES="output/open-static/$DIR_NAME";
 view_FILES="output/view/$DIR_NAME";
 
 rm -rf output
@@ -20,7 +20,7 @@ cp index.html "$view_FILES/index.tpl"
 
 pushd ./output > /dev/null
 tar zcf $PACKAGE_NAME ./*
-rm -rf public
+rm -rf open-static
 rm -rf view
 popd  > /dev/null
 

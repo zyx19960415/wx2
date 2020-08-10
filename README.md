@@ -3,7 +3,9 @@
 安装 docsify-cli 工具，可以方便创建及本地预览文档网站。
 
 ```bash
-npm i
+npm i --registry=http://registry.npm.baidu-int.com
+
+npm run release       发布测试代码
 ```
 
 运行一个本地服务器进行预览，默认访问 http://localhost:3000
