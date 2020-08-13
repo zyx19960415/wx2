@@ -25,7 +25,7 @@
         window.$docsify = {
             el: '#app',
             name: 'wx2',
-            repo: 'http://.baidu.com/repos/baidu/bp/wx2',
+            // repo: 'http://icode.baidu.com/repos/baidu/bp/wx2',
             basePath, // 基础路径
             homepage: '/start/context.md', // 首页
             coverpage: 'cover.md', // 封面
