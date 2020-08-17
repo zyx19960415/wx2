@@ -13,7 +13,7 @@
     * [登录](/contents/login.md)
     * [支付](/contents/payment.md)
     * [广告](/contents/adverticement.md)
-    * [二次迭代](/contents/envs.md)
+    * [多端适配](/contents/envs.md)
     * 云开发
         * [云存储](/cloud/cloudSave.md)
         * [云数据库](/cloud/cloudData.md)
