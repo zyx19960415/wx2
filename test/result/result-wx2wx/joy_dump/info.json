@@ -1,0 +1,107 @@
+[
+    {
+        "time": "[START] bootstrapping",
+        "type": "wx2bd",
+        "entry": "/Users/xujie07/demos/qq",
+        "dist": "/Users/xujie07/demos/wx2swan-original/test/source"
+    },
+    {
+        "time": "[DONE] bootstrapping done"
+    },
+    {
+        "time": "[START] start transforming json for config file",
+        "files": [
+            "/Users/xujie07/demos/wx2swan-original/test/source/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/button/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-icon/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-item/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/modal/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/notice-bar/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/page/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/swipe-out/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tab/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tabs/index.json",
+            "/Users/xujie07/demos/wx2swan-original/test/source/examples/tabs/index.json"
+        ]
+    },
+    {
+        "time": "[DONE] transform config file done"
+    },
+    {
+        "time": "[START] transforming view",
+        "query": "/Users/xujie07/demos/wx2swan-original/test/source/**/*.swan",
+        "files": [
+            "/Users/xujie07/demos/wx2swan-original/test/source/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/button/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-icon/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-item/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/modal/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/notice-bar/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/page/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/swipe-out/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tab/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tabs/index.swan",
+            "/Users/xujie07/demos/wx2swan-original/test/source/examples/tabs/index.swan"
+        ]
+    },
+    {
+        "time": "[DONE] transforming view done"
+    },
+    {
+        "time": "[START] transforming css",
+        "query": "/Users/xujie07/demos/wx2swan-original/test/source/**/*.css",
+        "files": [
+            "/Users/xujie07/demos/wx2swan-original/test/source/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/button/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-icon/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-item/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/modal/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/notice-bar/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/page/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/swipe-out/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tab/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tabs/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/examples/tabs/index.css",
+            "/Users/xujie07/demos/wx2swan-original/test/source/joy_dump/dist/app.css"
+        ]
+    },
+    {
+        "time": "[DONE] transforming css done"
+    },
+    {
+        "time": "[START] transforming js(wxs、sjs) file",
+        "query": "/Users/xujie07/demos/wx2swan-original/test/source/**/*sjs",
+        "files": [
+            "/Users/xujie07/demos/wx2swan-original/test/source/index.sjs"
+        ]
+    },
+    {
+        "time": "[DONE] transforming js done"
+    },
+    {
+        "time": "[START] transforming api",
+        "files": [
+            "/Users/xujie07/demos/wx2swan-original/test/source/detail.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/userLogin/login.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/button/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-icon/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/grid-item/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/modal/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/notice-bar/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/page/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/swipe-out/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tab/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/components/tabs/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/examples/tabs/index.js",
+            "/Users/xujie07/demos/wx2swan-original/test/source/joy_dump/dist/app.js"
+        ]
+    },
+    {
+        "time": "[DONE] transforming api done"
+    }
+]
