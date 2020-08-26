@@ -1,4 +1,4 @@
-import {getCookieForSystem} from './userLogin/login.js';
+import {getCookieForSystem} from "./userLogin/login.js";
 swan.navigateTo({
     url: '../logs/logs'
 }); // test api exist check in logical expression
