@@ -20,6 +20,7 @@ const View = require('./processor/transformView');
 const Css = require('./processor/transformCss');
 const createTransformInfo = require('./processor/createTransformInfo');
 const progress = require('../src/util/progress');
+const utils = require('./util/index');
 
 /**
  * 小程序互转的入口文件
@@ -37,6 +38,10 @@ module.exports = async function ({entry, dist, logFor, target}) {
     if (!fs.existsSync(RULES_PATH)) {
         throw new Error('不支持当前的转换类型，只支持百度小程序或微信小程序');
     }
+    if (!utils.isWin() && ((dist && dist.indexOf('\\') > -1) || (logFor && logFor.indexOf('\\') > -1))) {
+        console.log('路径中包含反斜线等非法字符！');
+        return;
+    }
 
     const logInstance = new Log(logFor);
     const CONTEXT = {
@@ -51,8 +56,8 @@ module.exports = async function ({entry, dist, logFor, target}) {
         data: {}
     };
 
-    // 获取文件总数
     try {
+        // 获取文件总数
         progress.getAllFile(entry);
     } catch (e) {
         console.log(e);
