@@ -35,6 +35,7 @@ exports.getAllFile = dir => {
         } else {
             transFileEnd += 1;
         }
+        global.transformFilesLength = transformFilesLength;
         new ProgressBar().render({completed: transFileEnd, total: transformFilesLength});
     });
 };

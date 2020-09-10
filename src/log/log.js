@@ -73,6 +73,13 @@ class Log {
                 utils.saveLog(`${path}/wx2_log/${level}.txt`, logs);
             }
         });
+
+        // 上报互转情况
+        let result = {
+            state: 'success',
+            fileNumber: global.transformFilesLength
+        };
+        utils.saveLog(`${path}/wx2_log/result.json`, JSON.stringify(result));
     }
 }
 
