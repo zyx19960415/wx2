@@ -39,16 +39,23 @@ $ wx2 <微信小程序文件夹> <目标小程序文件夹> --target=qq
 
 ## 测试
 
+### 测试方法
+
 项目通过jest工具进行单元测试，包括测试结果和测试覆盖率。
 ```
 // 单元测试
 npm run jest
 ```
 
+### 测试用例
+
+测试用例请参考test文件夹内部文件，下面是测试示例：
+
+![jest](https://staticsns.cdn.bcebos.com/amis/2020-9/1600068629433/jest.png)
+
 ## 如何贡献
 
 issue贡献： 如在使用中遇到问题，请在 http://newicafe.baidu.com/v5/space/baidu-bp-wx2/queries/query/all 新建icafe卡片反馈问题。
-wiki地址： https://pan.baidu.com/union/wx2/home#/ 
 
 | 流程 | 详细内容 | 责任人 |
 | --- | --- | --- |
@@ -62,8 +69,8 @@ wiki地址： https://pan.baidu.com/union/wx2/home#/
 
 ## 维护者
 
-owners: wangpan-fe@baidu.com
-committers: wangpan-fe@baidu.com
+* owners:  gaofei12@baidu.com
+* committers:  zhouyixuan01@baidu.com
 
 ## 讨论
 
