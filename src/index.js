@@ -170,8 +170,6 @@ function getRules(rulesPath, transformType) {
     const rules = require(rulesPath);
     const customProCfg = result && result.config || {
         projectType: 'u-design',
-        bdWxLogin: 'bdWxLogin',
-        getuserinfo: 'getuserinfo'
     };
 
     rules.api.babelPlugins = getPlugins(rulesPath, transformType);

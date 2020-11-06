@@ -1,4 +1,3 @@
-import {getCookieForSystem} from 'userLogin/login.js';
 swan.navigateTo({
     url: '../logs/logs'
 }); // test api exist check in logical expression
@@ -29,26 +28,6 @@ while (wx) {
     console.log(`wx${key}:`, swan[key]);
 }
 
-swan.login({
-    success(res) {
-        if (res.code) {
-            // 发起网络请求
-            swan.request({
-                url: 'https://test.com/onLogin',
-                header: {
-                    'content-type': 'application/x-www-form-urlencoded',
-                    'Cookie': `BDUSS=${wx2bd.getStorageSync('userInfo').bduss};STOKEN=${wx2bd.getStorageSync('userInfo').netdisk_stoken};`
-                },
-                data: {
-                    code: res.code
-                }
-            });
-        } else {
-            console.log('登录失败！' + res.errMsg);
-        }
-    }
-
-});
 swan.aaa = 111;
 swan['bbb'] = 222;
 swan[ccc] = 333;
@@ -61,35 +40,7 @@ swan['test'].call(wx, {
 });
 swan.test(swan.testFn, wx);
 swan.navigateToMiniProgram();
-import {bdWxLogin} from '@baidu/table/index';
-const a = {
-    getuserinfo({
-        info
-    }) {
-        swan.login({
-            success: () => {
-                swan.getUserInfo({
-                    success: () => {
-                        getCookieForSystem().then(() => {
-                            {
-                                if (info.detail) {
-                                    app.globalData.userWxInfo = info.detail.userInfo;
-                                    app.globalData.hasWxAuthor = true;
-                                    swan.setStorageSync('userWxInfo', info.detail.userInfo);
-                                    console.log('111: ', app.globalData);
-                                    swan.reLaunch({
-                                        url: this.data.url || DEFAULT_URL
-                                    });
-                                }
-                            }
-                        });
-                    }
-                });
-            }
-        });
-    }
 
-};
 wx.setClipboardData({
     data: 'data',
     success(res) {

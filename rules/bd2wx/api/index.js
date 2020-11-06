@@ -44,10 +44,6 @@ module.exports = {
             logLevel: 'error',
             message: '存在diff的函数，微信小程序中需使用requestPayment替代 \n      相关文档：https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_3&index=1'
         },
-        login: {
-            ...defaultConf,
-            message: '百度小程序中为code换取access_token，微信登录接口code换取openid和session_key \n      相关文档：https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html'
-        },
         onURLQueryChange: defaultDeleteConf,
         getURLQuery: defaultDeleteConf,
         setURLQuery: defaultDeleteConf,

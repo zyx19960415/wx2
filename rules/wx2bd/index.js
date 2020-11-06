@@ -19,7 +19,6 @@ module.exports = {
         script: 'sjs',
         npm: 'node_modules'
     },
-    login: fs.readFileSync(path.resolve(__dirname, './login.js')).toString(),
     api,
     view,
     css,

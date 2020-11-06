@@ -170,11 +170,6 @@ module.exports = {
             logLevel: 'error',
             message: '存在diff的函数，百度小程序中需使用requestPolymerPayment替代 \n      相关文档：https://smartprogram.baidu.com/docs/develop/api/open_payment/'
         },
-        // 登录
-        login: {
-            ...defaultConf,
-            message: '登录转换方案可参考: http://union.baidu-int.com/wx2#/contents/login'
-        },
         // -------------------------------------广告-------------------------------------
         createRewardedVideoAd: defaultDeleteConf,
         createInterstitialAd: defaultDeleteConf,

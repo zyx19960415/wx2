@@ -36,12 +36,6 @@ exports.transformJS = async function (context) {
         global.emitter.emit('event', false);
     });
 
-    const {projectType} = get(context, 'rules.api');
-    if (projectType === 'internal' && context.type === constant.WECHAT_TO_SWAN) {
-
-        has(context, 'rules.login') && saveLog(`${context.dist}/userLogin/login.js`, get(context, 'rules.login'));
-    }
-
     await Promise.all(promise);
 
 };
