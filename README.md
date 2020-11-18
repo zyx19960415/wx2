@@ -47,31 +47,25 @@ $ wx2 <微信小程序文件夹> <目标小程序文件夹> --target=qq
 npm run jest
 ```
 
-### 测试用例
-
-测试用例请参考test文件夹内部文件，下面是测试示例：
-
-![jest](https://staticsns.cdn.bcebos.com/amis/2020-9/1600068629433/jest.png)
-
-## 如何贡献
-
-issue贡献： 如在使用中遇到问题，请在 http://newicafe.baidu.com/v5/space/baidu-bp-wx2/queries/query/all 新建icafe卡片反馈问题。
-
-| 流程 | 详细内容 | 责任人 |
-| --- | --- | --- |
-|需求发布| 指定空间创建卡片空间, 拆分文档卡片 | 对应RD、PM、UE |
-|review| 确认内容正确性 & +1 | 方向负责人 |
-|review| 确认格式、规范、内容是否有问题 & +2 | 文档RD/互转RD （周轶轩/高飞） |
-| 提测 | 正常提测流程|  |
-| 合入master| 值班同学全量后，知会触发| 文档RD/互转RD（周轶轩/高飞）|
-| 预览 | 本地预览 | All |
-| 上线 | | |
-
 ## 维护者
 
-* owners:  gaofei12@baidu.com
-* committers:  zhouyixuan01@baidu.com
+owners: 
+* gaofei12@baidu.com
+
+committers: 
+* zhouyixuan01@baidu.com
+* xujie07@baidu.com
+* zhanyongdong@baidu.com
+* lijiaxuan02@baidu.com
+* wangshiyuan@baidu.com
+* lijinling03@baidu.com
+* zhangyatao@baidu.com
+
+
+## 反馈
+
+issues贡献： 如在使用中遇到问题，请在 https://github.com/baidu/wx2/issues 新建 issues 反馈问题。
 
 ## 讨论
 
-互转工具百度Hi讨论群：3498775
+互转工具百度如流讨论群：3498775
