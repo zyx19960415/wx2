@@ -7,6 +7,6 @@ Default:
 Profiles:
     - profile:
       name : deoply
-      env : wangpan-business
+      env : PAN-FE-BUILD
       command : sh ./scripts/build.sh
       release : true

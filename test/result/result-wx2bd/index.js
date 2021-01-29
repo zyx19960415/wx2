@@ -28,7 +28,6 @@ while (wx) {
     console.log(`wx${key}:`, swan[key]);
 }
 
-
 swan.aaa = 111;
 swan['bbb'] = 222;
 swan[ccc] = 333;
@@ -41,37 +40,22 @@ swan['test'].call(wx, {
 });
 swan.test(swan.testFn, wx);
 swan.navigateToMiniProgram();
-
 swan.setClipboardData({
     data: 'data',
 
     success(res) {
-        swan.showToast({
-            title: '内容已复制'
-        });
         console.log('111');
     }
 
 });
 swan.setClipboardData({
     data: 'data',
-
-    success(res) {
-        swan.showToast({
-            title: '内容已复制'
-        });
+    success: res => {
+        console.log('111');
     }
-
 });
 swan.setClipboardData({
-    data: 'data',
-
-    success(res) {
-        swan.showToast({
-            title: '内容已复制'
-        });
-    }
-
+    data: 'data'
 });
 Component({
     behaviors: ['wx://form-field', 'wx://component-export'],
